@@ -21,6 +21,18 @@ tabele <- c(
   "DPQ_L", "HSQ_L"             # samopoczucie
 )
 
+#Zmień rok i dodaj może ze trzy okresy jeszcze
+tabele <- c(
+  "DEMO_L",                    # demografia, wagi próby
+  "BMX_L",                     # pomiary ciała (BMI)
+  "HDL_L", "TCHOL_L",          # cholesterol
+  "BPQ_L", "MCQ_L",            # ciśnienie, choroby przewlekłe
+  "DIQ_L", "GHB_L", "GLU_L",   # cukrzyca
+  "SLQ_L",                     # sen
+  "OCQ_L",                     # praca
+  "DPQ_L", "HSQ_L"             # samopoczucie
+)
+
 #Stworzenie listy, w której nadajemy nazwy obiektom w "tabele"
 
 lista <- map(set_names(tabele), nhanes)
