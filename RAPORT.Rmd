@@ -1,6 +1,6 @@
 ---
 title: "Raport"
-author: "Franciszek Żuchowski"
+author: "Franciszek Żuchowski, Julia Wałdoch"
 date: "2026-11-22"
 output: html_document
 ---
