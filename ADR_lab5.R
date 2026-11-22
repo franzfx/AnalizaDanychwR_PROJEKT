@@ -37,3 +37,8 @@ dane%>%
   gg_miss_fct(fct= RIDEXPRG)
 
 #W raporcie uwzględnić wyjaśnienie dlaczego skorzystaliśmy z takiej metody imputacji braków danych
+
+#robienie hotdecka - dowiedz się co to i po co to robimy UWAŻAJ!! bo przy dużej liczbie NA może długo robić i to zamienia wszystkie
+#ale też to nie jest obiążające
+library(VIM)
+dane2 <- VIM::hotdeck(dane)
