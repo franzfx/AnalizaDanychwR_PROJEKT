@@ -58,6 +58,7 @@ dane_wybrane <- dane%>%
 # również spowodowane wybraniem zmiennych dla węższych grup)
 sum(is.na(dane_wybrane))
 
-# kontrola które zmienne "generują" najwięcej braków
+# kontrola które zmienne "generują" najwięcej braków - na wykresie widać wyraźnie że zmienna praca_pelny_etet ma
+# ok. 10 tys. braków danych
 dane_wybrane%>%
   gg_miss_var()
