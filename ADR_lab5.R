@@ -7,7 +7,7 @@ install.packages("misty")
 dane <- nhanes_2021_2023_raw
 
 #patrzymy ile mamy braków danych
-sum(is.na(nhanes_2021_2023_raw))
+sum(is.na(dane))
 
 #to samo ale z naniar
 n_miss(dane)
