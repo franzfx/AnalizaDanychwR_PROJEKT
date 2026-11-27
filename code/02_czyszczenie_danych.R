@@ -5,6 +5,8 @@ library(misty)
 library(nhanesA)
 library(purrr)
 
+# ETAP 1
+
 #zmiana nazw zmiennych
 dane_wybrane <- dane%>%
   select(
@@ -62,3 +64,21 @@ sum(is.na(dane_wybrane))
 # ok. 10 tys. braków danych
 dane_wybrane%>%
   gg_miss_var()
+
+# wyrzucenie zmiennej praca_pelny_etat z powodu prawie 90% NA oraz znikomej przydatnosci dla późniejszych analiz
+dane_do_zmian <- dane_wybrane%>%
+  select(-praca_pelny_etat)
+
+# xxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# ETAP 2
+
+# Kolejny krok to weryfikacja typów danych w poszczególnych zmiennych
+glimpse(dane_do_zmian)
+
+# Wybór unikalnych (unique) wartości z każdej kolumny, które są factorem albo characterem i zmiana tych wartości na 
+# character dzięki czemu można je sortować alfabetycznie
+dane_do_zmian%>%
+  select(where(is.factor), where(is.character), -starts_with("zasypianie_robocze"), -starts_with( "budzenie_robocze"), -starts_with("zasypianie_weekend"), -starts_with("budzenie_weekend"))%>%
+  lapply(function(x) sort(unique(as.character(x)), na.last = T))
+
